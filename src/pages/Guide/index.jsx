@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import profile from 'assets/images/main-img.png';
 import { theme } from 'assets/styles/theme';
 
-const About = () => {
+const Guide = () => {
   return (
     <Container>
       <Header />
@@ -28,7 +28,7 @@ const About = () => {
   );
 };
 
-export default About;
+export default Guide;
 
 const Container = styled.div`
   .middle {

@@ -2,7 +2,7 @@ import { theme } from 'assets/styles/theme';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const menus = ['Portfolio', 'About', 'Contact'];
+const menus = ['Portfolio', 'Guide', 'Contact'];
 
 const Header = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <Container>
       <section className="logo" onClick={() => movePage('')}>
-        <h1>GLASSKIM.</h1>
+        <h1>GLAXXKIM</h1>
       </section>
       <nav>
         <ul>
