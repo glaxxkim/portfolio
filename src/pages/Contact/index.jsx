@@ -22,19 +22,15 @@ export default Contact;
 const Container = styled.div`
   .middle {
     ${theme.flex('column', 'center')}
-    padding: 50px 200px 0;
+    padding: 0 10vw;
 
     h1 {
       text-align: center;
       font-size: 3rem;
     }
 
-    @media (max-width: 960px) {
-      padding: 50px 40px 0;
-    }
-
     @media (max-width: 460px) {
-      padding: 50px 20px 0;
+      padding: 0 18px;
     }
   }
 `;

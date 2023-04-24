@@ -33,7 +33,7 @@ export default Guide;
 const Container = styled.div`
   .middle {
     ${theme.flex('column', 'center')}
-    padding: 50px 200px 0;
+    padding: 0 10vw;
 
     .img-wrapper {
       ${theme.flex()}
@@ -69,12 +69,8 @@ const Container = styled.div`
       }
     }
 
-    @media (max-width: 960px) {
-      padding: 50px 40px 0;
-    }
-
     @media (max-width: 460px) {
-      padding: 50px 20px 0;
+      padding: 0 18px;
     }
   }
 `;

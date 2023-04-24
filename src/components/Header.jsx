@@ -33,17 +33,21 @@ const Container = styled.header`
   ${theme.flex('row', 'flex-end', 'space-around')};
   padding: 70px 0;
 
-  border-bottom: 1px solid #efefef;
-
   .logo {
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
     h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       white-space: nowrap;
     }
   }
 
   nav {
-    padding-bottom: 2px;
+    padding-bottom: 4px;
     height: 100%;
 
     ul {

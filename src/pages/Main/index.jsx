@@ -14,10 +14,9 @@ const Main = () => {
   }, []);
 
   return (
-    <Container>
+    <Container isShow={isShow}>
       <Header />
-
-      <section className="main-img" isShow={isShow}>
+      <section className="middle">
         <img className={isShow ? 'visible' : 'hidden'} src={mainSrc} alt="" />
         <div className="main-intro">
           <h1 className="intro-title">Lorem Ipsum</h1>
@@ -29,7 +28,6 @@ const Main = () => {
           </p>
         </div>
       </section>
-
       <Footer />
     </Container>
   );
@@ -48,7 +46,7 @@ const Container = styled.div`
     opacity: 1;
   }
 
-  .main-img {
+  .middle {
     ${theme.flex('column', 'center', '', 60)};
 
     img {
@@ -80,12 +78,8 @@ const Container = styled.div`
         }
       }
 
-      @media (max-width: 960px) {
-        padding: 0 40px;
-      }
-
       @media (max-width: 460px) {
-        padding: 0 20px;
+        padding: 0 18px;
       }
     }
   }
