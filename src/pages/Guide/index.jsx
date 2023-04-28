@@ -1,9 +1,11 @@
+import styled from 'styled-components';
+import { theme } from 'assets/styles/theme';
+
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import styled from 'styled-components';
 
-import profile from 'assets/images/main-img.png';
-import { theme } from 'assets/styles/theme';
+import { guideList } from './guideList';
+import React from 'react';
 
 const Guide = () => {
   return (
@@ -11,16 +13,17 @@ const Guide = () => {
       <Header />
 
       <section className="middle">
-        <div className="img-wrapper">
-          <img src={profile} alt="" />
-        </div>
-        <h1>Hello.</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-          sollicitudin condimentum fermentum. Integer lacinia, dui non fermentum
-          venenatis, lacus enim suscipit ante, at bibendum leo nisi placerat
-          sem.
-        </p>
+        <h1>Shooting Guide</h1>
+        <ul>
+          {guideList.map(({ title, price }, idx) => (
+            <React.Fragment key={idx}>
+              <li>
+                <span>{title}</span>
+                <span className="price">{price.toLocaleString()} 원</span>
+              </li>
+            </React.Fragment>
+          ))}
+        </ul>
       </section>
 
       <Footer />
@@ -32,40 +35,45 @@ export default Guide;
 
 const Container = styled.div`
   .middle {
-    ${theme.flex('column', 'center')}
+    ${theme.flex('column', 'center')};
     padding: 0 10vw;
 
-    .img-wrapper {
-      ${theme.flex()}
-      margin-bottom: 30px;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-
-      img {
-        max-width: 200%;
-        object-fit: cover;
-      }
-    }
-
     h1 {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       font-size: 3.4rem;
 
       @media (max-width: 640px) {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         font-size: 2.4rem;
       }
     }
 
-    p {
-      text-align: center;
-      font-size: 2.2rem;
-      line-height: 1.5;
+    ul {
+      ${theme.flex('column', '', '', 18)};
 
-      @media (max-width: 640px) {
-        font-size: 1.8rem;
+      li {
+        ${theme.flex('row', '', 'space-between')};
+        padding: 18px 24px;
+        min-width: 500px;
+        font-size: 1.6rem;
+        border: 1px solid #dedede;
+        border-radius: 10px;
+
+        .price {
+          margin-left: 40px;
+          color: #416bf7;
+        }
+
+        @media (max-width: 640px) {
+          ${theme.flex('column', 'center', '', 10)};
+          padding: 10px 0;
+          width: 90vw;
+          font-size: 1.4rem;
+
+          .price {
+            font-weight: bold;
+          }
+        }
       }
     }
 

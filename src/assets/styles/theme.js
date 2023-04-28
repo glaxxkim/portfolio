@@ -1,5 +1,5 @@
 export const color = {
-  main: '#2852dc',
+  main: '#416bf7',
 };
 
 export const flex = (

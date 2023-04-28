@@ -29,6 +29,8 @@ const Container = styled.div`
 
   @media (max-width: 500px) {
     ${theme.flex('column', 'center', '', 16)};
-    padding: 60px 0 40px;
+    margin-top: 40px;
+    padding: 40px 0;
+    border-top: 1px solid #efefef;
   }
 `;
