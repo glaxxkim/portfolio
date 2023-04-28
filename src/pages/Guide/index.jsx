@@ -71,6 +71,7 @@ const Container = styled.div`
           font-size: 1.4rem;
 
           .price {
+            margin: 0;
             font-weight: bold;
           }
         }

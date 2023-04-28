@@ -98,6 +98,7 @@ const GlobalStyle = createGlobalStyle`
   input[type='checkbox']:checked::after {
     display: block;
   }
+  textarea,
   input[type='button'],
   input[type='email'],
   input[type='password'],
