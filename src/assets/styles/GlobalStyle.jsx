@@ -1,10 +1,23 @@
 import { createGlobalStyle } from 'styled-components';
+import { theme } from './theme';
 
 const GlobalStyle = createGlobalStyle` 
   * {
     font-family: 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
       'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
     box-sizing: border-box;
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  .visible {
+    opacity: 1;
+  }
+
+  .middle {
+    transition: opacity 0.5s;
   }
 
   p {
@@ -19,6 +32,13 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     -webkit-text-size-adjust: none;
     background-color: white;
+  }
+
+  div, span, h1, h2, h3, h4, p, li, label {
+    ::selection {
+      background-color: ${theme.color.main};
+      color: white;
+    }
   }
 
   blockquote,

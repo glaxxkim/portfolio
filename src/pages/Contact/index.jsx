@@ -1,18 +1,28 @@
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 
 import { theme } from 'assets/styles/theme';
 import styled from 'styled-components';
 
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import profileSrc from 'assets/images/img_profile01.jpg';
+import profileSrc from 'assets/images/main/contact_profile.jpg';
 import EmailForm from './EmailForm';
+import { useEffect, useState } from 'react';
 
 const Contact = () => {
+  const [isShow, setIsShow] = useState(false);
+
+  useEffect(() => {
+    setIsShow(true);
+    return () => {
+      setIsShow(false);
+    };
+  }, []);
+
   return (
     <Container>
       <Header />
-      <section className="middle">
+      <section className={`middle ${isShow ? 'visible' : 'hidden'}`}>
         <EmailForm />
         <div className="img-wrapper">
           <ul>
@@ -26,7 +36,7 @@ const Contact = () => {
               <span>Instagram&nbsp;&nbsp;</span> glaxxkim
             </li>
           </ul>
-          <img src={profileSrc} alt="" />
+          <img src={profileSrc} data-src={profileSrc} alt="" />
         </div>
       </section>
       <Footer />

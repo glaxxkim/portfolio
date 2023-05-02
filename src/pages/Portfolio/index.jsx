@@ -1,151 +1,28 @@
+import { useEffect, useMemo, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import styled from 'styled-components';
 import { theme } from 'assets/styles/theme';
+
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import MasonryList from 'components/Masonry';
-import { useEffect, useMemo, useState } from 'react';
-import styled from 'styled-components';
+import Masonry from 'components/Masonry';
 
-const imgData = [
-  {
-    src: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f',
-    title: 'Snacks',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1529655683826-aba9b3e77383',
-    title: 'Tower',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1627328715728-7bcc1b5db87d',
-    title: 'Tree',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1627000086207-76eabf23aa2e',
-    title: 'Camping Car',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1627328561499-a3584d4ee4f7',
-    title: 'Mountain',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f',
-    title: 'Snacks',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1529655683826-aba9b3e77383',
-    title: 'Tower',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1627328715728-7bcc1b5db87d',
-    title: 'Tree',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1627000086207-76eabf23aa2e',
-    title: 'Camping Car',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1627328561499-a3584d4ee4f7',
-    title: 'Mountain',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-  },
-];
+/** 포트폴리오 메뉴벌 이미지 관리 */
+import model from 'pages/Portfolio/model';
+import product from 'pages/Portfolio/product';
 
 const Portfolio = () => {
+  const location = useLocation();
   const [width, setWidth] = useState(window.innerWidth);
+  const [isShow, setIsShow] = useState(false);
+
+  useEffect(() => {
+    setIsShow(true);
+    return () => {
+      setIsShow(false);
+    };
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
@@ -156,6 +33,14 @@ const Portfolio = () => {
 
   const handleResize = () => setWidth(window.innerWidth);
 
+  const currentSubMenu = useMemo(() => {
+    const path = location.pathname;
+
+    if (path === '/portfolio') return [...model, ...product];
+    else if (path.includes('model')) return model;
+    else if (path.includes('product')) return product;
+  }, [location.pathname]);
+
   const currentColumnCount = useMemo(() => {
     if (width < 600) return 1;
     if (width < 800) return 2;
@@ -165,14 +50,15 @@ const Portfolio = () => {
   return (
     <Container>
       <Header />
-      <section className="middle">
-        <MasonryList columnCount={currentColumnCount}>
-          {imgData.map((img, index) => (
+      <section className={`middle ${isShow ? 'visible' : 'hidden'}`}>
+        <Masonry columnCount={currentColumnCount}>
+          {currentSubMenu.map((img, index) => (
             <div key={index} className="img-wrapper">
-              <img src={img.src} alt="" />
+              <h2>{img.title}</h2>
+              <img src={img.src} data-src={img.src} alt="" />
             </div>
           ))}
-        </MasonryList>
+        </Masonry>
       </section>
       <Footer />
     </Container>
@@ -187,8 +73,33 @@ const Container = styled.div`
     padding: 0 10vw;
 
     .img-wrapper {
-      border-radius: 10px;
-      overflow: hidden;
+      position: relative;
+
+      h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.2s;
+        font-size: 2rem;
+        color: white;
+        word-break: break-all;
+        z-index: 1;
+      }
+
+      img {
+        max-width: 500px;
+        transition: filter 0.2s;
+      }
+
+      &:hover img {
+        filter: brightness(0.3);
+      }
+
+      &:hover h2 {
+        opacity: 1;
+      }
     }
 
     @media (max-width: 460px) {

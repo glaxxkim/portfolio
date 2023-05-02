@@ -5,14 +5,23 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 
 import { guideList } from './guideList';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Guide = () => {
+  const [isShow, setIsShow] = useState(false);
+
+  useEffect(() => {
+    setIsShow(true);
+    return () => {
+      setIsShow(false);
+    };
+  }, []);
+
   return (
     <Container>
       <Header />
 
-      <section className="middle">
+      <section className={`middle ${isShow ? 'visible' : 'hidden'}`}>
         <h1>Shooting Guide</h1>
         <ul>
           {guideList.map(({ title, price }, idx) => (
@@ -66,8 +75,9 @@ const Container = styled.div`
 
         @media (max-width: 640px) {
           ${theme.flex('column', 'center', '', 10)};
-          padding: 10px 0;
+          padding: 14px 0;
           width: 90vw;
+          min-width: 300px;
           font-size: 1.4rem;
 
           .price {

@@ -3,7 +3,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import styled from 'styled-components';
 
-import mainSrc from 'assets/images/main-img.png';
+import mainSrc from 'assets/images/main/landing_bg.png';
 import { useEffect, useState } from 'react';
 
 const Main = () => {
@@ -11,13 +11,16 @@ const Main = () => {
 
   useEffect(() => {
     setIsShow(true);
+    return () => {
+      setIsShow(false);
+    };
   }, []);
 
   return (
     <Container isShow={isShow}>
       <Header />
-      <section className="middle">
-        <img className={isShow ? 'visible' : 'hidden'} src={mainSrc} alt="" />
+      <section className={`middle ${isShow ? 'visible' : 'hidden'}`}>
+        <img src={mainSrc} alt="" />
         <div className="main-intro">
           <h1 className="intro-title">Lorem Ipsum</h1>
           <p className="intro-text">
@@ -38,20 +41,11 @@ export default Main;
 const Container = styled.div`
   height: 100vh;
 
-  .hidden {
-    opacity: 0;
-  }
-
-  .visible {
-    opacity: 1;
-  }
-
   .middle {
     ${theme.flex('column', 'center', '', 60)};
 
     img {
       width: 100%;
-      transition: opacity 1s;
     }
 
     .main-intro {

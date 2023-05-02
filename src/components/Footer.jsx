@@ -1,4 +1,5 @@
 import { theme } from 'assets/styles/theme';
+import React from 'react';
 import styled from 'styled-components';
 
 const Footer = () => {
@@ -12,7 +13,7 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);
 
 const Container = styled.div`
   ${theme.flex('column', 'center', 'center', 16)}

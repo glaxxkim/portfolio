@@ -28,12 +28,11 @@ export default Masonry;
 
 const Container = styled.div`
   ${theme.flex('row', '', 'space-between', 24)};
-
   width: 100%;
 `;
 
 const Column = styled.div`
-  ${theme.flex('column', '', '', 24)}
+  ${theme.flex('column', '', '', 24)};
 
   img {
     width: 100%;
