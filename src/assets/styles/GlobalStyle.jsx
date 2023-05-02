@@ -20,6 +20,12 @@ const GlobalStyle = createGlobalStyle`
     transition: opacity 0.5s;
   }
 
+  .pointer {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   p {
     word-break: break-all;
   }

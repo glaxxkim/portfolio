@@ -35,17 +35,12 @@ const Portfolio = () => {
 
   const currentSubMenu = useMemo(() => {
     const path = location.pathname;
-
-    if (path === '/portfolio') return [...model, ...product];
-    else if (path.includes('model')) return model;
-    else if (path.includes('product')) return product;
+    if (path === '/portfolio') return [...model(), ...product()];
+    else if (path.includes('model')) return model();
+    else if (path.includes('product')) return product();
   }, [location.pathname]);
 
-  const currentColumnCount = useMemo(() => {
-    if (width < 600) return 1;
-    if (width < 800) return 2;
-    return 3;
-  }, [width]);
+  const currentColumnCount = useMemo(() => (width < 800 ? 1 : 3), [width]);
 
   return (
     <Container>
@@ -55,7 +50,7 @@ const Portfolio = () => {
           {currentSubMenu.map((img, index) => (
             <div key={index} className="img-wrapper">
               <h2>{img.title}</h2>
-              <img src={img.src} data-src={img.src} alt="" />
+              <img src={img.url} data-src={img.url} alt="" />
             </div>
           ))}
         </Masonry>

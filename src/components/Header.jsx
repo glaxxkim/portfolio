@@ -25,11 +25,11 @@ const Header = () => {
   return (
     <Container>
       <section className="logo" onClick={() => movePage('')}>
-        <h1>GLAXXKIM</h1>
+        <h1 className="pointer">GLAXXKIM</h1>
       </section>
       <nav onMouseLeave={() => !isMobileSize && setIsDropdownShow(false)}>
         <div
-          className="menu"
+          className="menu pointer"
           onMouseEnter={() => !isMobileSize && setIsDropdownShow(true)}
           onClick={() => movePage('portfolio')}
         >
@@ -37,15 +37,22 @@ const Header = () => {
         </div>
         {(isMobileSize || isDropdownShow) && (
           <ul className="dropdown">
-            <li onClick={() => movePage('portfolio/model')}>Model</li>
+            <li className="pointer" onClick={() => movePage('portfolio/model')}>
+              Model
+            </li>
             {!isMobileSize && <li className="line">|</li>}
-            <li onClick={() => movePage('portfolio/product')}>Product</li>
+            <li
+              className="pointer"
+              onClick={() => movePage('portfolio/product')}
+            >
+              Product
+            </li>
           </ul>
         )}
-        <div className="menu" onClick={() => movePage('guide')}>
+        <div className="menu pointer" onClick={() => movePage('guide')}>
           Guide
         </div>
-        <div className="menu" onClick={() => movePage('contact')}>
+        <div className="menu pointer" onClick={() => movePage('contact')}>
           Contact
         </div>
       </nav>
@@ -97,7 +104,8 @@ const Container = styled.header`
       li {
         padding: 14px;
         padding-left: 0;
-        color: ${theme.color.main};
+        font-size: 1.5rem;
+        color: #9a9a9a;
 
         &:hover {
           text-decoration: underline;
