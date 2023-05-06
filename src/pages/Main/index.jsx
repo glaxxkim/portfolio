@@ -3,7 +3,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import styled from 'styled-components';
 
-import mainSrc from 'assets/images/main/landing_bg.png';
+import mainSrc from 'assets/images/landing_bg.jpg';
 import { useEffect, useState } from 'react';
 
 const Main = () => {

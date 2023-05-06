@@ -27,7 +27,7 @@ const Masonry = ({ columnCount, children }) => {
 export default Masonry;
 
 const Container = styled.div`
-  ${theme.flex('row', '', 'space-between', 24)};
+  ${theme.flex('row', '', 'center', 24)};
   width: 100%;
 `;
 

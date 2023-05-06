@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+glaxxkim.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 공통
 
-## Available Scripts
+프로젝트 저장소: https://github.com/glaxxkim/portfolio
 
-In the project directory, you can run:
+이미지 저장소: https://github.com/glaxxkim/images
 
-### `npm start`
+모든 이미지는 포토샵 등으로 용량을 작게해서 올리는게 좋습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br />
 
-### `npm test`
+## 대문 이미지 변경하기
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. 먼저 프로젝트 저장소에서 `src/assets/images` 폴더 경로 접속. (아래 링크 누르면 바로 접속)
 
-### `npm run build`
+   https://github.com/glaxxkim/portfolio/tree/main/src/assets/images
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. 상단의 `Add file` > `Upload files` 클릭 (상단 `Add file` 안누르고 그냥 파일을 드래그해도 자동으로 넘어갑니다.)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. 파일 드래그나 `choose your files` 클릭해서 이미지 업로드
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+\*\* 파일명은 `landing_bg.jpg` 그대로 업로드
 
-### `npm run eject`
+<br />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contact 프로필 이미지 변경
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+대문 이미지와 같은 경로에서 `contact_profile.jpg` 이미지 변경
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Shooting Guide 목록 메뉴 추가 및 변경
 
-## Learn More
+`src/pages/Guide` 경로의 `guideList.js` 파일에서, 아래 항목 복사해서 추가 및 변경
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+{
+  title: '여기에 메뉴 이름(따옴표 필수)',
+  price: 여기는 금액(따옴표 없이 숫자만 입력),
+},
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+위 형태 그대로 복사해서 텍스트만 변경하면 편함
+```
 
-### Code Splitting
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 포트폴리오 이미지 관리
 
-### Analyzing the Bundle Size
+1. https://github.com/glaxxkim/images 링크 접속
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. model은 model 폴더 안에, product는 product 폴더 안에 형식 맞춰서 넣은 후에,
 
-### Making a Progressive Web App
+3. `src/pages/Portfolio` 경로 접속
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- 링크 https://github.com/glaxxkim/portfolio/tree/main/src/pages/Portfolio
+- 위 경로에서 models.js, products.js 각각 수정하기
 
-### Advanced Configuration
+   <br />
+   <img width="332" alt="스크린샷 2023-05-06 오전 9 19 37" src="https://user-images.githubusercontent.com/131372838/236587944-f225b555-b5ef-4944-a62d-d8e0d28a5825.png">
+   <br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+url에는 파일명 형태 작성 (아래 예시 참고, 따옴표 필수)
+title에는 해당 사진 제목 작성 (따옴표 필수)
 
-### Deployment
+{
+  url: "model_01.jpg",
+  title: "여기에 제목 작성",
+},
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+위 슈팅 가이드 추가하는 것 처럼, 중괄호 범위 그대로 복사 후 붙여넣고 추가할 수 있음
+```

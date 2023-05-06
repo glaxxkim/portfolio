@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import profileSrc from 'assets/images/main/contact_profile.jpg';
+import profileSrc from 'assets/images/contact_profile.jpg';
 import EmailForm from './EmailForm';
 import { useEffect, useState } from 'react';
 

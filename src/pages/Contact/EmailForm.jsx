@@ -12,13 +12,16 @@ const EmailForm = () => {
 
     emailjs
       .sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_xe4tzmi',
+        'template_6pxvp4u',
         emailForm.current,
-        'YOUR_PUBLIC_KEY'
+        '4CVAfNGr_kFsBb60n'
       )
       .then(
-        result => console.log(result.text),
+        result => {
+          console.log('result', result);
+          alert('이메일 전송이 완료되었습니다');
+        },
         error => console.log(error.text)
       );
   };
@@ -29,19 +32,34 @@ const EmailForm = () => {
       <form ref={emailForm} onSubmit={sendEmail}>
         <div>
           <label htmlFor="name">Name</label>
-          <input id="name" type="text" required />
+          <input
+            id="name"
+            type="text"
+            placeholder="이름을 입력해주세요"
+            required
+          />
         </div>
         <div>
           <label htmlFor="email">Email Address</label>
-          <input id="email" type="email" required />
+          <input
+            id="email"
+            type="email"
+            placeholder="이메일을 입력해주세요"
+            required
+          />
         </div>
         <div>
           <label htmlFor="title">Title</label>
-          <input id="title" type="text" required />
+          <input
+            id="title"
+            type="text"
+            placeholder="제목을 입력해주세요"
+            required
+          />
         </div>
         <div>
           <label htmlFor="message">Message</label>
-          <textarea id="message" required />
+          <textarea id="message" placeholder="내용을 입력해주세요" required />
         </div>
         <button type="submit">Send Message</button>
       </form>
@@ -78,6 +96,10 @@ const Container = styled.div`
         padding: 14px 12px;
         border: 1px solid #e8e8e8;
         color: ${theme.color.main};
+
+        &::placeholder {
+          color: #c5c5c5;
+        }
       }
 
       textarea {
