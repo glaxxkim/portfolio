@@ -80,6 +80,7 @@ const Container = styled.div`
         font-size: 1.8rem;
         font-weight: 300;
         color: white;
+        text-align: center;
         word-break: keep-all;
         z-index: 1;
       }
