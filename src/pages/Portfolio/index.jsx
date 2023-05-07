@@ -78,8 +78,9 @@ const Container = styled.div`
         opacity: 0;
         transition: opacity 0.2s;
         font-size: 1.8rem;
+        font-weight: 300;
         color: white;
-        word-break: break-all;
+        word-break: keep-all;
         z-index: 1;
       }
 

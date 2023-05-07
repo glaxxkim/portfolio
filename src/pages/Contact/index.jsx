@@ -57,8 +57,8 @@ const Container = styled.div`
         margin-bottom: 20px;
 
         li {
-          margin-bottom: 6px;
-          font-size: 1.4rem;
+          margin-bottom: 4px;
+          font-size: 1.8rem;
 
           span {
             font-weight: bold;

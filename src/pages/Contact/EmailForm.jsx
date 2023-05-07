@@ -33,6 +33,7 @@ const EmailForm = () => {
         <div>
           <label htmlFor="name">Name</label>
           <input
+            className="spoqa"
             id="name"
             name="user_name"
             type="text"
@@ -43,6 +44,7 @@ const EmailForm = () => {
         <div>
           <label htmlFor="email">Email Address</label>
           <input
+            className="spoqa"
             id="email"
             name="user_email"
             type="email"
@@ -53,6 +55,7 @@ const EmailForm = () => {
         <div>
           <label htmlFor="title">Title</label>
           <input
+            className="spoqa"
             id="title"
             name="user_title"
             type="text"
@@ -63,6 +66,7 @@ const EmailForm = () => {
         <div>
           <label htmlFor="message">Message</label>
           <textarea
+            className="spoqa"
             id="message"
             name="user_message"
             placeholder="내용을 입력해주세요"
@@ -78,13 +82,13 @@ const EmailForm = () => {
 export default EmailForm;
 
 const Container = styled.div`
-  ${theme.flex('column', 'flex-start', '', 60)};
+  ${theme.flex('column', 'flex-start', '', 58)};
   width: 100%;
   max-width: 500px;
 
   h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 500;
   }
 
@@ -96,7 +100,7 @@ const Container = styled.div`
       ${theme.flex('column', '', '', 8)};
 
       label {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
       }
 
       input,
@@ -121,6 +125,7 @@ const Container = styled.div`
       height: 44px;
       background-color: #3a3a3a;
       color: white;
+      font-size: 1.6rem;
     }
   }
 

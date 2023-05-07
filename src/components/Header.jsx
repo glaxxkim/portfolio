@@ -74,7 +74,7 @@ const Container = styled.header`
     }
 
     h1 {
-      font-size: 3.2rem;
+      font-size: 4rem;
       white-space: nowrap;
     }
   }

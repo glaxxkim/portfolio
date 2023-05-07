@@ -23,7 +23,7 @@ const Main = () => {
         <img src={mainSrc} alt="" />
         <div className="main-intro">
           <h1 className="intro-title">ABOUT GLAXXKIM</h1>
-          <p className="intro-text">
+          <p className="intro-text spoqa">
             포토그래퍼 김유리 입니다.
             <br />
             <br />

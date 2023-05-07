@@ -27,8 +27,8 @@ const Guide = () => {
           {guideList.map(({ title, price }, idx) => (
             <React.Fragment key={idx}>
               <li>
-                <span>{title}</span>
-                <span className="price">{price.toLocaleString()} 원</span>
+                <span className="spoqa">{title}</span>
+                <span className="price spoqa">{price.toLocaleString()} 원</span>
               </li>
             </React.Fragment>
           ))}
