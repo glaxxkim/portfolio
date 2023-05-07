@@ -135,7 +135,6 @@ const Container = styled.header`
   @media (max-width: 800px) {
     ${theme.flex('column', 'center', '', 40)};
     margin-bottom: 40px;
-    padding: 40px 0 30px;
-    border-bottom: 1px solid #efefef;
+    padding: 40px 0 0;
   }
 `;
