@@ -34,6 +34,7 @@ const EmailForm = () => {
           <label htmlFor="name">Name</label>
           <input
             id="name"
+            name="user_name"
             type="text"
             placeholder="이름을 입력해주세요"
             required
@@ -43,6 +44,7 @@ const EmailForm = () => {
           <label htmlFor="email">Email Address</label>
           <input
             id="email"
+            name="user_email"
             type="email"
             placeholder="이메일을 입력해주세요"
             required
@@ -52,6 +54,7 @@ const EmailForm = () => {
           <label htmlFor="title">Title</label>
           <input
             id="title"
+            name="user_title"
             type="text"
             placeholder="제목을 입력해주세요"
             required
@@ -59,7 +62,12 @@ const EmailForm = () => {
         </div>
         <div>
           <label htmlFor="message">Message</label>
-          <textarea id="message" placeholder="내용을 입력해주세요" required />
+          <textarea
+            id="message"
+            name="user_message"
+            placeholder="내용을 입력해주세요"
+            required
+          />
         </div>
         <button type="submit">Send Message</button>
       </form>
