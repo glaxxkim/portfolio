@@ -77,7 +77,7 @@ const Container = styled.div`
         transform: translate(-50%, -50%);
         opacity: 0;
         transition: opacity 0.2s;
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: white;
         word-break: break-all;
         z-index: 1;
