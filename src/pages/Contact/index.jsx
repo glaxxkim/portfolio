@@ -27,7 +27,7 @@ const Contact = () => {
         <div className="img-wrapper">
           <ul>
             <li>
-              <span>Email&nbsp;&nbsp;</span> glaxxkim@naver.com
+              <span>Email&nbsp;&nbsp;</span> glasskim0822@naver.com
             </li>
             <li>
               <span>Phone&nbsp;&nbsp;</span> +82 10 2938 7920

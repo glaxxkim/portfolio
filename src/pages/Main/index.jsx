@@ -22,12 +22,14 @@ const Main = () => {
       <section className={`middle ${isShow ? 'visible' : 'hidden'}`}>
         <img src={mainSrc} alt="" />
         <div className="main-intro">
-          <h1 className="intro-title">Lorem Ipsum</h1>
+          <h1 className="intro-title">ABOUT GLAXXKIM</h1>
           <p className="intro-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            sollicitudin condimentum fermentum. Integer lacinia, dui non
-            fermentum venenatis, lacus enim suscipit ante, at bibendum leo nisi
-            placerat sem.
+            포토그래퍼 김유리 입니다.
+            <br />
+            <br />
+            패션 의류 및 잡화 모델 촬영, 제품사진 촬영, 스냅 촬영, 기업 행사
+            촬영, 스튜디오 촬영, 야외 촬영, 사진 보정 작업 등 원하시는 컨셉에
+            맞게 촬영 해드립니다.
           </p>
         </div>
       </section>
@@ -49,7 +51,7 @@ const Container = styled.div`
     }
 
     .main-intro {
-      padding: 0 120px;
+      padding: 0 180px;
       text-align: center;
 
       .intro-title {
@@ -67,10 +69,15 @@ const Container = styled.div`
         font-size: 2.2rem;
         text-align: center;
         line-height: 1.5;
+        word-break: keep-all;
 
         @media (max-width: 640px) {
           font-size: 1.8rem;
         }
+      }
+
+      @media (max-width: 800px) {
+        padding: 0 60px;
       }
 
       @media (max-width: 460px) {
