@@ -44,7 +44,7 @@ const Container = styled.div`
   height: 100vh;
 
   .middle {
-    ${theme.flex('column', 'center', '', 60)};
+    ${theme.flex('column', 'center', '', 100)};
 
     img {
       width: 100%;
