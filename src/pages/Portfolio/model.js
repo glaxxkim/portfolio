@@ -60,7 +60,6 @@ const titles = [
   'ROOKIEBUD 2023 S/S LOOKBOOK ',
   'ROOKIEBUD 2023 S/S LOOKBOOK ',
   'ROOKIEBUD 2023 S/S LOOKBOOK ', // 60
-  'ROOKIEBUD 2023 S/S LOOKBOOK ',
 ];
 
 const BASE_URL =
@@ -76,9 +75,11 @@ const images = imports.splice(0, half).map(image => image);
 
 const model = () => {
   const models = images.map((_, index) => {
-    const isZero = index < 10 ? true : false;
+    const isZero = index < 11 ? true : false;
     return {
-      url: `${BASE_URL}/model_${isZero ? '0' + (index + 1) : index}.jpg`,
+      url: `${BASE_URL}/model_${
+        isZero ? (index === 9 ? index : '0' + (index + 1)) : index
+      }.jpg`,
       title: titles[index],
     };
   });

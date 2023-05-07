@@ -22,9 +22,11 @@ const images = imports.splice(0, half).map(image => image);
 
 const product = () => {
   const products = images.map((_, index) => {
-    const isZero = index < 10 ? true : false;
+    const isZero = index < 11 ? true : false;
     return {
-      url: `${BASE_URL}/product_${isZero ? '0' + (index + 1) : index}.jpg`,
+      url: `${BASE_URL}/product_${
+        isZero ? (index === 9 ? index : '0' + (index + 1)) : index
+      }.jpg`,
       title: titles[index],
     };
   });
