@@ -66,7 +66,7 @@ const Container = styled.div`
 
       .intro-text {
         max-width: 800px;
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         font-weight: 300;
         text-align: center;
         line-height: 1.5;
