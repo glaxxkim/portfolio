@@ -105,6 +105,7 @@ const Container = styled.header`
         padding: 14px;
         padding-left: 0;
         font-size: 1.5rem;
+        font-weight: 300;
         color: #9a9a9a;
 
         &:hover {
