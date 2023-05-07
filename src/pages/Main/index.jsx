@@ -84,5 +84,9 @@ const Container = styled.div`
         padding: 0 18px;
       }
     }
+
+    @media (max-width: 800px) {
+      gap: 60px;
+    }
   }
 `;
