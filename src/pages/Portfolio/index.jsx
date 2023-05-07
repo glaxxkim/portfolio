@@ -9,8 +9,8 @@ import Header from 'components/Header';
 import Masonry from 'components/Masonry';
 
 /** 포트폴리오 메뉴벌 이미지 관리 */
-import model from 'pages/Portfolio/model';
-import product from 'pages/Portfolio/product';
+import model from 'assets/images/model';
+import product from 'assets/images/product';
 
 const Portfolio = () => {
   const location = useLocation();
