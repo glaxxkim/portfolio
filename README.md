@@ -2,6 +2,9 @@ glaxxkim.com
 
 ## 공통
 
+업로드 제한 기준: 빌드 시간 300분 (https://app.netlify.com/teams/glasskim0822/overview)
+\*\* 위 링크 들어가면 화면 중앙에 `Build minutes used`가 있습니다.
+
 프로젝트 저장소: https://github.com/glaxxkim/portfolio
 
 이미지 저장소: https://github.com/glaxxkim/images
