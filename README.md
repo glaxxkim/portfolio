@@ -1,15 +1,22 @@
-glaxxkim.com
+## 사이트
+
+[glaxxkim.com](https://glaxxkim.com)
 
 ## 공통
 
-업로드 제한 기준: 빌드 시간 300분 (https://app.netlify.com/teams/glasskim0822/overview)
-\*\* 위 링크 들어가면 화면 중앙에 `Build minutes used`가 있습니다.
+1. 이미지 업로드 후, 사이트에 적용 여부 확인
 
-프로젝트 저장소: https://github.com/glaxxkim/portfolio
+   - [netlify](https://app.netlify.com/teams/glasskim0822/overview)에서 확인 가능
+   - 접속 후 왼쪽 메뉴에서 `Build` 메뉴를 누르면, 목록이 나오는데 가장 최신 정보 옆에 `Completed` 태그가 달려있으면 적용 완료.
+   - 이미지 업로드를 하면 자동으로 적용 과정에 들어갑니다.
 
-이미지 저장소: https://github.com/glaxxkim/images
+2. 업로드 제한 기준: 빌드 시간 300분 ([netlify](https://app.netlify.com/teams/glasskim0822/overview)에서 확인)
 
-모든 이미지는 포토샵 등으로 용량을 작게해서 올리는게 좋습니다.
+   - 위 링크 들어가면 화면 중앙에 `Build minutes used`가 있습니다.
+
+3. [프로젝트 저장소](https://github.com/glaxxkim/portfolio)
+
+4. 모든 이미지는 포토샵 등으로 용량을 줄이고 올리는게 좋습니다.
 
 ---
 
@@ -17,15 +24,13 @@ glaxxkim.com
 
 ## 대문 이미지 변경하기
 
-1. 먼저 프로젝트 저장소에서 `src/assets/images` 폴더 경로 접속. (아래 링크 누르면 바로 접속)
-
-   https://github.com/glaxxkim/portfolio/tree/main/src/assets/images
+1. 먼저 프로젝트 저장소에서 `src/assets/images` 폴더 경로 접속. ([경로 바로가기](https://github.com/glaxxkim/portfolio/tree/main/src/assets/images))
 
 2. 상단의 `Add file` > `Upload files` 클릭 (상단 `Add file` 안누르고 그냥 파일을 드래그해도 자동으로 넘어갑니다.)
 
 3. 파일 드래그나 `choose your files` 클릭해서 이미지 업로드
 
-\*\* 파일명은 `landing_bg.jpg` 그대로 업로드
+   \*\* 파일명은 `landing_bg.jpg` 그대로 업로드
 
 <br />
 
@@ -37,42 +42,44 @@ glaxxkim.com
 
 ## Shooting Guide 목록 메뉴 추가 및 변경
 
-`src/pages/Guide` 경로의 `guideList.js` 파일에서, 아래 항목 복사해서 추가 및 변경
+`src/pages/Guide` 경로의 `guideList.js` 파일에서, 아래 항목 복사해서 추가 및 변경([파일 바로가기](https://github.com/glaxxkim/portfolio/blob/main/src/pages/Guide/guideList.js))
 
-```
+```jsx
 {
   title: '여기에 메뉴 이름(따옴표 필수)',
-  price: 여기는 금액(따옴표 없이 숫자만 입력),
+  price: 20000,
 },
-
-위 형태 그대로 복사해서 텍스트만 변경하면 편함
 ```
 
 <br />
 
 ## 포트폴리오 이미지 관리
 
-1. https://github.com/glaxxkim/images 링크 접속
+1. 이미지 삽입: `src/assets/images` 경로에서 각각 `model`, `product` 폴더에 이미지 넣기
 
-2. model은 model 폴더 안에, product는 product 폴더 안에 형식 맞춰서 넣은 후에,
-
-3. `src/pages/Portfolio` 경로 접속
-
-- 링크 https://github.com/glaxxkim/portfolio/tree/main/src/pages/Portfolio
-- 위 경로에서 models.js, products.js 각각 수정하기
+2. 각 이미지에 제목 넣기: `src/assets/images` 경로에서 `models.js`, `products.js` 각각 수정하기
 
    <br />
    <img width="332" alt="스크린샷 2023-05-06 오전 9 19 37" src="https://user-images.githubusercontent.com/131372838/236587944-f225b555-b5ef-4944-a62d-d8e0d28a5825.png">
    <br />
 
-```
-url에는 파일명 형태 작성 (아래 예시 참고, 따옴표 필수)
-title에는 해당 사진 제목 작성 (따옴표 필수)
+```jsx
+const titles = [
+  '제목1', // 1
+  '제목2',
+];
 
-{
-  url: "model_01.jpg",
-  title: "여기에 제목 작성",
-},
-
-위 슈팅 가이드 추가하는 것 처럼, 중괄호 범위 그대로 복사 후 붙여넣고 추가할 수 있음
+// titles 대괄호 안에 차례대로 형식처럼 적으면 제목 적용. (편의를 위해 '제목1' 옆처럼 처럼 번호 표기해주면 좋음)
 ```
+
+<br />
+
+## 이메일 템플릿 변경
+
+1. https://dashboard.emailjs.com/admin/templates/rdw846w 여기에서 변경 가능
+2. 템플릿에서 중괄호 안에 있는건 수정하면 안되고, 위치 변경은 가능(ex: `{{user_name}}`이걸 `{{name}}` 이런 식의 변경은 금지)
+   - 중괄호 수정을 제외하고는 자유롭게 양식 변경 가능.
+   - user_name: 이메일 양식의 Name
+   - user_email: 이메일 양식의 Email Address
+   - user_title: 이메일 양식의 Title
+   - user_message: 이메일 양식의 Message
