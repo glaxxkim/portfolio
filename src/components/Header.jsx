@@ -1,11 +1,8 @@
 import { theme } from 'assets/styles/theme';
 import React, { useEffect, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = () => {
-  const navigate = useNavigate();
-
   const [width, setWidth] = useState(window.innerWidth);
   const [isDropdownShow, setIsDropdownShow] = useState(false);
 
@@ -20,7 +17,7 @@ const Header = () => {
 
   const handleResize = () => setWidth(window.innerWidth);
 
-  const movePage = menu => navigate(`/${menu}`);
+  const movePage = menu => window.location.replace(`/${menu}`);
 
   return (
     <Container>
