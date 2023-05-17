@@ -8,15 +8,15 @@ export const guideList = [
     price: 100000,
   },
   {
-    title: '3시간/정밀보정(4장)',
+    title: '3시간/원본 + 정밀보정(4장)',
     price: 300000,
   },
   {
-    title: '5시간(Halfday)/정밀보정(8장)',
+    title: '5시간(Halfday)/원본 + 정밀보정(8장)',
     price: 500000,
   },
   {
-    title: '9시간(Fullday)/정밀보정(12장)',
+    title: '9시간(Fullday)/원본 + 정밀보정(12장)',
     price: 900000,
   },
   {
