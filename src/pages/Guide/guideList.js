@@ -4,7 +4,7 @@ export const guideList = [
     price: 80000,
   },
   {
-    title: '스냅촬영(1시간/원본 + 정밀보정(4장))',
+    title: '스냅촬영(1시간/원본 + 정밀보정(2장))',
     price: 100000,
   },
   {
