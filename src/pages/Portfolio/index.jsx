@@ -34,7 +34,6 @@ const Portfolio = () => {
   const handleResize = () => setWidth(window.innerWidth);
 
   const currentSubMenu = useMemo(() => {
-    console.log('location.pathname', location.pathname);
     const path = location.pathname;
     if (path === '/portfolio') return [...model(), ...product()];
     else if (path.includes('model')) return model();
