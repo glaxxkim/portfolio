@@ -11,6 +11,8 @@ import Masonry from 'components/Masonry';
 /** 포트폴리오 메뉴벌 이미지 관리 */
 import model from 'assets/images/model';
 import product from 'assets/images/product';
+import kid from 'assets/images/kids';
+import oneEvent from 'assets/images/event';
 
 const Portfolio = () => {
   const location = useLocation();
@@ -35,8 +37,12 @@ const Portfolio = () => {
 
   const currentSubMenu = useMemo(() => {
     const path = location.pathname;
-    if (path === '/portfolio') return [...model(), ...product()];
+    console.log('path', path);
+    if (path === '/portfolio')
+      return [...model(), ...kid(), ...oneEvent(), ...product()];
     else if (path.includes('model')) return model();
+    else if (path.includes('kids')) return kid();
+    else if (path.includes('event')) return oneEvent();
     else if (path.includes('product')) return product();
   }, [location.pathname]);
 

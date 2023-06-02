@@ -38,6 +38,14 @@ const Header = () => {
               Model
             </li>
             {!isMobileSize && <li className="line">|</li>}
+            <li className="pointer" onClick={() => movePage('portfolio/kids')}>
+              Kids
+            </li>
+            {!isMobileSize && <li className="line">|</li>}
+            <li className="pointer" onClick={() => movePage('portfolio/event')}>
+              Event
+            </li>
+            {!isMobileSize && <li className="line">|</li>}
             <li
               className="pointer"
               onClick={() => movePage('portfolio/product')}
