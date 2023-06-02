@@ -37,7 +37,6 @@ const Portfolio = () => {
 
   const currentSubMenu = useMemo(() => {
     const path = location.pathname;
-    console.log('path', path);
     if (path === '/portfolio')
       return [...model(), ...kid(), ...oneEvent(), ...product()];
     else if (path.includes('model')) return model();
