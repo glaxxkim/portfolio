@@ -48,8 +48,8 @@ const titles = [
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
-  'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack', // 50
+  'Superpowers For Your Web3 Stack', 
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
@@ -67,6 +67,7 @@ const titles = [
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
+  'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack', // 70
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
@@ -76,7 +77,9 @@ const titles = [
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
+  'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack', // 80
+  'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
@@ -94,6 +97,7 @@ const titles = [
   '2023 한양대학교 공학대학원 9회 학술대회',
   '2023 한양대학교 공학대학원 9회 학술대회',
   '2023 한양대학교 공학대학원 9회 학술대회',
+  '2023 한양대학교 공학대학원 9회 학술대회',
   '2023 한양대학교 공학대학원 9회 학술대회', // 100
   '2023 한양대학교 공학대학원 9회 학술대회',
   '2023 한양대학교 공학대학원 9회 학술대회',
@@ -101,7 +105,6 @@ const titles = [
   '2023 한양대학교 공학대학원 9회 학술대회',
   '2023 한양대학교 공학대학원 9회 학술대회',
   '2023 한양대학교 공학대학원 9회 학술대회', // 106
-];
 ];
 
 const BASE_URL =
