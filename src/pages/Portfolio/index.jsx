@@ -38,11 +38,11 @@ const Portfolio = () => {
   const currentSubMenu = useMemo(() => {
     const path = location.pathname;
     if (path === '/portfolio')
-      return [...model(), ...kid(), ...oneEvent(), ...product()];
-    else if (path.includes('model')) return model();
-    else if (path.includes('kids')) return kid();
-    else if (path.includes('event')) return oneEvent();
-    else if (path.includes('product')) return product();
+      return [...model, ...kid, ...oneEvent, ...product];
+    else if (path.includes('model')) return model;
+    else if (path.includes('kids')) return kid;
+    else if (path.includes('event')) return oneEvent;
+    else if (path.includes('product')) return product;
   }, [location.pathname]);
 
   const currentColumnCount = useMemo(() => (width < 800 ? 1 : 3), [width]);

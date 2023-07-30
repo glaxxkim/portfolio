@@ -1,3 +1,5 @@
+import { setImages } from 'utils/imageResult';
+
 /** 제목이 없어도 되는 경우는 ''로 표기해주시면 돼요. */
 const titles = [
   'ROOKIEBUD 2023 S/S LOOKBOOK ', // 1
@@ -58,8 +60,8 @@ const titles = [
   'ROOKIEBUD 2023 S/S LOOKBOOK ',
   'ROOKIEBUD 2023 S/S LOOKBOOK ',
   'ROOKIEBUD 2023 S/S LOOKBOOK ',
+  'ROOKIEBUD 2023 S/S LOOKBOOK ',
   'ROOKIEBUD 2023 S/S LOOKBOOK ', // 60
-  'ROOKIEBUD 2023 S/S LOOKBOOK ', 
 ];
 
 const BASE_URL =
@@ -72,21 +74,8 @@ const imports = importAll(
 
 const half = Math.ceil(imports.length / 2);
 const images = imports.splice(0, half).map(image => image);
+const imageNumbering = images.map(image => image.slice(20, -25));
+imageNumbering.sort((a, b) => a - b);
 
-const model = () => {
-  const models = images.map((_, index) => {
-    const currentIndex = index + 1;
-    const isZero = currentIndex < 10 ? true : false;
-
-    return {
-      url: `${BASE_URL}/model_${
-        isZero ? '0' + currentIndex : currentIndex
-      }.jpg`,
-      title: titles[index],
-    };
-  });
-
-  return models;
-};
-
+const model = setImages('model', BASE_URL, titles, imageNumbering);
 export default model;

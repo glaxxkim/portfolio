@@ -1,3 +1,5 @@
+import { setImages } from 'utils/imageResult';
+
 const titles = [
   '2023 INVITATION TRAINING PROGRAM ', // 1
   '2023 INVITATION TRAINING PROGRAM ',
@@ -49,7 +51,7 @@ const titles = [
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack', // 50
-  'Superpowers For Your Web3 Stack', 
+  'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
   'Superpowers For Your Web3 Stack',
@@ -117,21 +119,8 @@ const imports = importAll(
 
 const half = Math.ceil(imports.length / 2);
 const images = imports.splice(0, half).map(image => image);
+const imageNumbering = images.map(image => image.slice(20, -25));
+imageNumbering.sort((a, b) => a - b);
 
-const oneEvent = () => {
-  const event = images.map((_, index) => {
-    const currentIndex = index + 1;
-    const isZero = currentIndex < 10 ? true : false;
-
-    return {
-      url: `${BASE_URL}/event_${
-        isZero ? '0' + currentIndex : currentIndex
-      }.jpg`,
-      title: titles[index],
-    };
-  });
-
-  return event;
-};
-
+const oneEvent = setImages('event', BASE_URL, titles, imageNumbering);
 export default oneEvent;

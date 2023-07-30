@@ -1,3 +1,5 @@
+import { setImages } from 'utils/imageResult';
+
 /** 제목이 없어도 되는 경우는 ''로 표기해주시면 돼요. */
 const titles = [
   '1', // 1
@@ -19,21 +21,8 @@ const imports = importAll(
 
 const half = Math.ceil(imports.length / 2);
 const images = imports.splice(0, half).map(image => image);
+const imageNumbering = images.map(image => image.slice(22, -25));
+imageNumbering.sort((a, b) => a - b);
 
-const product = () => {
-  const products = images.map((_, index) => {
-    const currentIndex = index + 1;
-    const isZero = currentIndex < 10 ? true : false;
-
-    return {
-      url: `${BASE_URL}/product_${
-        isZero ? '0' + currentIndex : currentIndex
-      }.jpg`,
-      title: titles[index],
-    };
-  });
-
-  return products;
-};
-
+const product = setImages('product', BASE_URL, titles, imageNumbering);
 export default product;
